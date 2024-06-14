@@ -4,14 +4,14 @@ import './App.css';
 import Loader from './Loader/Loader'
 
 function App() {
-  const [value, setValue] = useState("1");
-  const [result, setResult] = useState([]);
+  const [value, setValue] = useState("");
+  const [result, setResult] = useState(["1"]);
   const [loading, setLoading] = useState(false);
   const handleClick = async () => {
     try {
       setLoading(true);
       const res = await axios.post("http://localhost:5000/api/GenAIGenerate/generate", value , { headers: { 'Content-Type': 'application/json' } });
-      setResult(res);
+      setResult(res.data);
     } catch (error) {
       setResult(["Something went wrong...."]);
       console.log(error);

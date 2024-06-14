@@ -5,7 +5,7 @@ import Loader from './Loader/Loader'
 
 function App() {
   const [value, setValue] = useState("");
-  const [result, setResult] = useState(["1.................................", "2", "3"]);
+  const [result, setResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const handleClick = async () => {
     try {
